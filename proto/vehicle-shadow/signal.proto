@@ -105,4 +105,5 @@ message Config {
   optional string comment = 8;
   repeated Value allowd = 9;
   optional Value default = 10;
+  string end_point = 11;
 } 
