@@ -40,13 +40,13 @@ message GetResponse {
 // Request to set signals
 message SetRequest {
   repeated SetSignalRequest signals = 1;
+  string token = 2;
 }
 
 // Individual signal set request
 message SetSignalRequest {
   string path = 1;
   State state = 2;
-  string token = 3;
 }
 
 // Response for set request
