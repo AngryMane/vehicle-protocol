@@ -91,7 +91,7 @@ message LockResponse {
 
 // Request to unlock signals
 message UnlockRequest {
-  repeated string token = 1;
+  string token = 1;
 }
 
 // Response for unlock request 
