@@ -46,6 +46,7 @@ message SetRequest {
 message SetSignalRequest {
   string path = 1;
   State state = 2;
+  string token = 3;
 }
 
 // Response for set request
