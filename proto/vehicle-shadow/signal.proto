@@ -17,6 +17,12 @@ service SignalService {
   
   // Unsubscribe from signal changes
   rpc Unsubscribe(UnsubscribeRequest) returns (UnsubscribeResponse);
+
+  // Lock signal
+  rpc Lock(LockRequest) returns (LockResponse);
+  
+  // Unlock signal
+  rpc Unlock(UnlockRequest) returns (UnlockResponse);
 }
 
 // Request to get signals
@@ -70,6 +76,27 @@ message SubscribeResponse {
 // Request to unsubscribe from signals
 message UnsubscribeRequest {
   repeated string paths = 1;
+}
+
+// Request to lock signals
+message LockRequest {
+  repeated string paths = 1;
+}
+
+// Response for lock request 
+message LockResponse {
+  bool success = 1;
+  string token = 2;
+}
+
+// Request to unlock signals
+message UnlockRequest {
+  repeated string token = 1;
+}
+
+// Response for unlock request 
+message UnlockResponse {
+  bool success = 1;
 }
 
 // Response for unsubscribe request
